@@ -466,4 +466,12 @@ class Article < Content
     to = to - 1 # pull off 1 second so we don't overlap onto the next day
     return from..to
   end
+
+  def self.merge(receiver, sender)
+    #append body and comments to receiver, delete sender
+    #new_body = receiver.body + sender.body
+    #receiver.update_attribute(:body, new_body)
+    #receiver.save : sender.destroy
+    #receiver
+  end
 end

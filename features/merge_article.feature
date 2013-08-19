@@ -19,8 +19,8 @@ Feature: Merge article
       | SaintVicious   | AY-YO SON   | 4          |
 
   Scenario: Merge one article into another
-    Given I am on the admin content page
-    When I go to the edit page for the "Merge into Other" article
+    Given I am on the Manage Articles page
+    When I go to the Edit page for the "Merge into Other" article
     Then I should see "Merge Articles"
     When I fill in "Article ID" with "3"
     And I press "Merge"
