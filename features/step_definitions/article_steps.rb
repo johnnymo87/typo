@@ -9,3 +9,11 @@ Given /the following comments exist/ do |comments_table|
     Comment.create!(comment)
   end
 end
+
+Given /I login as an administrator/ do
+  visit '/accounts/login'
+  debugger
+  find(:css, 'user_login').set('admin')
+  find(:css, 'input#user_password').set('UZlWeUD')
+  click_button "Login"
+end

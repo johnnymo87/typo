@@ -671,4 +671,11 @@ describe Admin::ContentController do
 
     end
   end
+
+  describe 'merge articles' do
+    it 'should try to lookup the sender by id' do
+      Article.should_receive(:find).with('3')
+      post :merge_articles, {:sender_id => '3'}
+    end
+  end
 end

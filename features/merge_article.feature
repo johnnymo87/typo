@@ -5,6 +5,9 @@ Feature: Merge article
 
   Background: articles in database
 
+    Given the blog is set up
+    And I am logged into the admin panel
+
     Given the following articles exist:
       | title            | author    | body |
       | Hello World!     | Mr Typo   | abc  |

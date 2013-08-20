@@ -242,6 +242,15 @@ class Admin::ContentController < Admin::BaseController
   end
 
   def merge_articles
-    #Article.merge(sender, receiver)
+    begin
+      sender = Article.find(params[:sender_id])
+    rescue
+      flash[:notice] = 'Invalid ID!'
+      render 'edit' and return
+    end
+    receiver = Article.find(params[:id])
+    Article.merge(sender, receiver)
+    flash[:notice] = 'Merge Successful!'
+    redirect_to :action => 'index'
   end
 end
