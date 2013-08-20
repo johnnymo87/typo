@@ -113,7 +113,7 @@ Rails.application.routes.draw do
   end
 
   # ContentController
-  post '/admin/content/edit/:id/merge_articles', to: 'admin/content#merge_articles', as: 'merge_articles'
+  match '/admin/content/merge_articles/:id', to: 'admin/content#merge_articles', as: 'merge_articles'
 
   # default
   root :to  => 'articles#index', :format => false

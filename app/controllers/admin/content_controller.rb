@@ -242,6 +242,7 @@ class Admin::ContentController < Admin::BaseController
   end
 
   def merge_articles
+    debugger
     begin
       sender = Article.find(params[:sender_id])
     rescue
@@ -253,4 +254,5 @@ class Admin::ContentController < Admin::BaseController
     flash[:notice] = 'Merge Successful!'
     redirect_to :action => 'index'
   end
+
 end

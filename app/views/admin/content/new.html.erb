@@ -3,9 +3,8 @@
 <%= render "admin/shared/edit", { :form_type => "article", :form_action => { :action => "new", :id => @article.id , :class => ('autosave')} } %>
 
 <h3><%= _("Merge Articles")%></h3>
-<%= form_for :params, :url => merge_articles_path(@article) do |f| %>
-    <p>
-      <%= f.text_field :sender_id, :value => 'Article ID', :id => 'Article ID' %>
+<%= debug @article %>
+<%= form_tag merge_articles_path(@article) do %>
+      <%= text_field_tag :sender_id, nil, :placeholder => 'Article ID'  %>
       <%= submit_tag 'Merge' %>
-    </p>
 <% end %>
